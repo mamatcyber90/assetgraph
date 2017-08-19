@@ -117,7 +117,6 @@ describe('transforms/splitCssIfIeLimitIsReached', function () {
                 const parseTreeAfter = new AssetGraph.Css({ text }).parseTree;
 
                 expect(assetGraph._parseTreeBefore.toString().replace(/\n+/g, '\n'), 'to equal', (parseTreeAfter.toString() + '\n').replace(/\n+/g, '\n'));
-
                 for (const extension of ['png', 'gif', 'svg', 'ttf', 'eot', 'woff']) {
                     expect(assetGraph, 'to contain asset', {
                         url: new RegExp('\\.' + extension + '(?:$|#)')
